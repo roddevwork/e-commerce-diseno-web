@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ***Custom Properties *** */
+:root {
+	/* Colors */
+	--primary-color: rgb(255, 99, 71);
+	--primary-text: rgb(253, 253, 253);
+	--bg-color-primary: rgb(34, 34, 34);
+	--bg-color-secondary: rgba(0, 0, 0, 0.8);
+	--black-color: rgb(0, 0, 0);
+	--white-color: rgb(255, 255, 255);
+
+	/* Fonts */
+	--font-primary: 'Roboto', Arial, Helvetica, sans-serif;
+	--font-secondary: 'Press Start 2P', Arial, Helvetica, sans-serif;
+	--light: 400;
+	--medium: 500;
+	--bold: 700;
+
+	/* Sizes */
+	--max-width: 1200px;
+	--header-height: 70px;
+}
+
+/* ***Reset *** */
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	text-decoration: none;
+	list-style: none;
+	font-family: var(--font-primary);
+}
+
+body {
+	background-color: var(--bg-color-primary);
+	color: var(--first-text);
+	font-family: var(--font-primary);
+	overflow-x: hidden;
+	width: 100%;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--bg-color-secondary);
+	padding: 1rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.logo {
+	flex: 1;
+}
+
+nav ul {
+	list-style: none;
+	display: none;
+	flex-direction: column;
+}
+
+nav li {
+	margin: 0.5rem 0;
+}
+
+nav a {
+	color: var(--first-text);
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	display: block;
+}
+/* Hero Section */
+#hero {
+	padding: 70px 20px;
+	text-align: center;
+	background-image: url(assets/img/hero-img.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	/* background-attachment: fixed; */
+	color: var(--white-color);
+}
+
+.hero-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 50vh;
+}
+
+.hero-content h1 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	font-family: var(--font-secondary);
+}
+
+.hero-content p {
+	font-size: 1rem;
+	margin-bottom: 30px;
+}
+
+.hero-content button {
+	background-color: var(--primary-color);
+	color: var(--white-color);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+}
