@@ -43,7 +43,7 @@ html {
 
 body {
 	background-color: var(--bg-color-primary);
-	color: var(--first-text);
+	color: var(--primary-text);
 	font-family: var(--font-primary);
 	overflow-x: hidden;
 	width: 100%;
@@ -81,8 +81,44 @@ nav a {
 	padding: 0.5rem 1rem;
 	display: block;
 }
+nav a:hover {
+	color: var(--primary-color);
+	font-weight: var(--bold);
+}
+
+/* Burger menu */
+.menu-btn {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	width: 70px;
+	height: 70px;
+	font-size: 2.5rem;
+	line-height: 70px;
+	text-align: center;
+}
+
+.menu-toggle {
+	display: none;
+}
+button .menu-btn {
+	opacity: 0;
+}
+
+.menu-toggle:checked + .menu-btn + ul {
+	display: flex;
+	background-color: var(--bg-color-secondary);
+	position: absolute;
+	top: var(--header-height);
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 999;
+}
+
 /* Hero Section */
 #hero {
+	width: 100%;
 	padding: 70px 20px;
 	text-align: center;
 	background-image: url(assets/img/hero-img.jpg);
@@ -94,6 +130,7 @@ nav a {
 }
 
 .hero-content {
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -102,7 +139,7 @@ nav a {
 }
 
 .hero-content h1 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin-bottom: 20px;
 	font-family: var(--font-secondary);
 }
@@ -112,7 +149,97 @@ nav a {
 	margin-bottom: 30px;
 }
 
-.hero-content button {
+.hero-content a {
+	background-color: var(--bg-color-secondary);
+	color: var(--white-color);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+}
+/* About Us Section */
+#about {
+	padding: 50px 20px;
+	text-align: center;
+}
+
+.about-content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+
+	color: var(--white-color);
+}
+
+.about-content h2 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	font-family: var(--font-secondary);
+}
+
+.about-content p {
+	font-size: 1rem;
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+
+.about-content ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-content ul li {
+	margin: 10px;
+	text-align: center;
+}
+
+/* Products Section*/
+#products {
+	padding: 50px 20px;
+	text-align: center;
+}
+
+.cards-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card {
+	width: 100%;
+	margin: 15px 0;
+	background-color: var(--bg-color-secondary);
+	color: var(--white-color);
+	text-align: center;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.card img {
+	width: 100%;
+	max-width: 400px;
+
+	height: auto;
+	object-fit: cover;
+	margin-bottom: 10px;
+}
+
+.card h3 {
+	font-size: 1.2rem;
+	margin-bottom: 5px;
+	font-family: var(--font-secondary);
+}
+
+.card p {
+	font-size: 1.3rem;
+	font-weight: bold;
+	margin: 15px;
+}
+
+.card-btn {
 	background-color: var(--primary-color);
 	color: var(--white-color);
 	padding: 10px 20px;
@@ -120,4 +247,86 @@ nav a {
 	border-radius: 5px;
 	cursor: pointer;
 	font-size: 1rem;
+}
+.card-btn:hover {
+	background-color: var(--bg-color-secondary);
+	color: var(--primary-color);
+}
+
+/* Contact Section */
+#contact {
+	padding: 50px 20px;
+	text-align: center;
+}
+
+.contact-container {
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-group {
+	margin: 10px 0;
+	text-align: left;
+}
+
+label {
+	font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+	width: 100%;
+	padding: 8px;
+	margin-top: 4px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+button {
+	border-radius: 0.5rem;
+	border: 1px solid transparent;
+	padding: 1rem;
+	display: inline-block;
+	width: 200px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	background-color: var(--bg-color-sedondary);
+	color: var(--white-color);
+}
+
+button:hover {
+	background-color: var(--first-color);
+}
+.contact-info {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.contact-info p {
+	font-size: 1rem;
+	margin-bottom: 10px;
+}
+.responsive-iframe-container {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	height: 0; /* Remove height so that padding-top determines the height */
+}
+.responsive-iframe-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
 }
