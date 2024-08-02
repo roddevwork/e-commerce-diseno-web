@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/* ***Custom Properties *** */
+/* -> Custom Properties */
 :root {
 	/* Colors */
 	--primary-color: rgb(255, 99, 71);
@@ -15,16 +15,16 @@
 	/* Fonts */
 	--font-primary: 'Roboto', Arial, Helvetica, sans-serif;
 	--font-secondary: 'Press Start 2P', Arial, Helvetica, sans-serif;
-	--light: 400;
-	--medium: 500;
-	--bold: 700;
+	--font-light: 400;
+	--font-medium: 500;
+	--font-bold: 700;
 
 	/* Sizes */
 	--max-width: 1200px;
-	--header-height: 70px;
+	--header-height: 66px;
 }
 
-/* ***Reset *** */
+/* -> Reset */
 html {
 	box-sizing: border-box;
 	font-size: 16px;
@@ -50,8 +50,10 @@ body {
 	background-color: var(--bg-color-primary);
 }
 
+/* -> Header */
 header {
 	width: 100%;
+	height: var(--header-height);
 	position: fixed;
 	top: 0;
 	z-index: 999;
@@ -62,8 +64,12 @@ header {
 	background-color: var(--bg-color-secondary);
 }
 
-.logo {
+.header-logo {
 	flex: 1;
+}
+.header-logo img {
+	width: 50px;
+	height: 50px;
 }
 
 nav ul {
@@ -97,6 +103,7 @@ nav a:hover {
 	font-size: 2.5rem;
 	line-height: 70px;
 	cursor: pointer;
+	color: var(--primary-color);
 }
 
 .menu-toggle {
@@ -109,15 +116,20 @@ button .menu-btn {
 .menu-toggle:checked + .menu-btn + ul {
 	width: 100%;
 	position: absolute;
-	top: var(--header-height);
+	top: 100%;
 	left: 0;
 	display: flex;
 	text-align: center;
 	z-index: 999;
 	background-color: var(--bg-color-secondary);
 }
+.menu-toggle:checked + .menu-btn {
+	color: var(--primary-text);
+}
 
-/* Hero Section */
+/* -> Menu */
+
+/* -> Hero Section */
 #hero {
 	background-image: url(assets/img/hero-img.jpg);
 	background-repeat: no-repeat;
@@ -146,6 +158,10 @@ button .menu-btn {
 	align-items: center;
 }
 
+.hero-content a:hover {
+	border: 1px solid var(--white-color);
+}
+
 .hero-content h1 {
 	margin-bottom: 20px;
 	line-height: normal;
@@ -162,10 +178,16 @@ button .menu-btn {
 	color: var(--primary-text);
 	background-color: var(--bg-color-secondary);
 }
-/* About Us Section */
+
+/* -> About Us Section */
 #about {
-	padding: 50px 20px;
+	min-height: 100vh;
+	padding: calc(var(--header-height) + 10px) 50px 10px 10px;
 	text-align: center;
+}
+
+.about-title {
+	font-size: 1.5rem;
 }
 
 .about-content {
@@ -173,12 +195,6 @@ button .menu-btn {
 	margin: 0 auto;
 	padding: 20px;
 	color: var(--white-color);
-}
-
-.about-content h2 {
-	margin-bottom: 20px;
-	font-size: 2rem;
-	font-family: var(--font-secondary);
 }
 
 .about-content p {
@@ -199,70 +215,92 @@ button .menu-btn {
 	text-align: center;
 }
 
-/* Products Section*/
+/* -> Products Section */
 #products {
-	padding: 50px 20px;
+	padding: calc(var(--header-height) + 10px) 50px 10px 10px;
 	text-align: center;
 }
+.products-title {
+	font-size: 1.5rem;
+}
 
-.cards-container {
+.product-cards {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 
 .card {
-	width: 100%;
+	width: 90%;
 	margin: 15px 0;
-	padding: 20px;
 	text-align: center;
-	border-radius: 5px;
-	color: var(--white-color);
+	padding: 20px;
+	border-radius: 10px;
 	background-color: var(--bg-color-secondary);
+	color: var(--white-color);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-10px);
 }
 
 .card img {
 	width: 100%;
 	max-width: 400px;
 	height: auto;
-	margin-bottom: 10px;
 	object-fit: cover;
+	margin-bottom: 10px;
+	border-radius: 10px;
 }
 
 .card h3 {
-	margin-bottom: 5px;
-	font-size: 1.2rem;
+	font-size: 1.4rem;
+	line-height: 1.7rem;
+	margin-bottom: 10px;
 	font-family: var(--font-secondary);
 }
 
 .card p {
-	margin: 15px;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
+	margin-bottom: 15px;
 	font-weight: bold;
+	color: var(--primary-color);
 }
 
 .card-btn {
-	padding: 10px 20px;
+	padding: 12px 25px;
 	border: none;
 	border-radius: 5px;
-	font-size: 1rem;
 	cursor: pointer;
+	font-size: 1rem;
 	color: var(--white-color);
-	background-color: var(--primary-color);
+	background-color: var(--bg-color-third);
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 .card-btn:hover {
+	border: 1px solid var(--primary-text);
 	color: var(--primary-color);
 	background-color: var(--bg-color-secondary);
 }
 
-/* Contact Section */
+/* -> Contact Section */
 #contact {
-	padding: 50px 20px;
+	padding: calc(var(--header-height) + 10px) 50px 10px 10px;
 	text-align: center;
+}
+.contact-title {
+	font-size: 1.5rem;
 }
 
 .contact-container {
-	width: 80%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
 	padding: 20px;
 	text-align: center;
@@ -292,21 +330,23 @@ textarea {
 	border-radius: 4px;
 }
 
-button {
-	width: 200px;
+.contact-btn {
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	padding: 1rem;
+	padding: 10px 20px;
 	border-radius: 0.5rem;
 	border: 1px solid transparent;
-	font-weight: bold;
+	font-size: 1rem;
+	cursor: pointer;
 	color: var(--white-color);
-	background-color: var(--bg-color-sedondary);
+	background-color: var(--bg-color-secondary);
 }
 
-button:hover {
-	background-color: var(--first-color);
+.contact-btn:hover {
+	border: 1px solid var(--primary-text);
+	color: var(--primary-color);
+	background-color: var(--bg-color-third);
 }
 .contact-info {
 	max-width: 800px;
@@ -320,10 +360,15 @@ button:hover {
 }
 .responsive-iframe-container {
 	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+	height: 0;
 	overflow: hidden;
-	padding-top: 56.25%; /* 16:9 Aspect Ratio */
-	height: 0; /* Remove height so that padding-top determines the height */
+	max-width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 }
+
 .responsive-iframe-container iframe {
 	position: absolute;
 	top: 0;
@@ -333,7 +378,7 @@ button:hover {
 	border: 0;
 }
 
-/* Footer */
+/* -> Footer */
 .footer {
 	width: 100%;
 	display: flex;
@@ -371,29 +416,42 @@ button:hover {
 	font-weight: 900;
 }
 
-/* Media Queries para Tablets */
+/* -> Media Queries Tablets */
 @media (min-width: 768px) {
+	/*  Header */
 	nav ul {
 		display: flex;
-		flex-direction: row; /* Fila en tablet */
+		flex-direction: row;
 	}
 
-	nav li {
-		margin: 0 1rem; /* Menos espaciado en tablet */
+	nav ul li {
+		margin: 0 0.5rem;
 	}
 
 	.menu-btn {
 		display: none;
 	}
 
-	.hero-content h1 {
-		font-size: 2.5rem;
+	/*  Hero Section */
+
+	.hero-content a {
+		padding: 15px 30px;
+		font-size: 1.5rem;
+	}
+
+	/*  About Section */
+	.about-title {
+		font-size: 1.8rem;
 	}
 
 	.about-content ul {
 		flex-direction: row;
 	}
 
+	/*  Products Section */
+	.products-title {
+		font-size: 1.8rem;
+	}
 	.product-cards {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -402,24 +460,79 @@ button:hover {
 
 	.card {
 		width: 45%;
+		margin: 15px 1.5%;
+	}
+
+	.card img {
+		max-width: 100%;
+	}
+
+	.card h3 {
+		font-size: 1.6rem;
+	}
+
+	.card p {
+		font-size: 1.4rem;
 	}
 
 	.contact-info {
 		text-align: left;
 	}
+
+	/*  Contact Section */
+	.contact-title {
+		font-size: 1.8rem;
+	}
+
 	/* footer */
+	.footer {
+		padding: 10px 20px;
+	}
 	.container-social-and-copy {
 		flex-direction: row;
 		align-items: center;
 	}
 }
-/* Media Queries para Desktop */
+/* -> Media Queries Desktop */
 @media (min-width: 1024px) {
-	.hero-content h1 {
-		font-size: 3rem;
+	/*  Header */
+	nav ul li {
+		font-size: 1.2rem;
 	}
 
+	/*  Hero Section */
+	.hero-content a {
+		padding: 20px 40px;
+		font-size: 1.8rem;
+	}
+
+	/*  About Section */
+	.about-title {
+		font-size: 2.6rem;
+		padding-bottom: 20px;
+	}
+
+	/*  Products Section */
+	.products-title {
+		font-size: 2.6rem;
+		padding-bottom: 20px;
+	}
 	.card {
 		width: 30%;
+		margin: 15px 1.5%;
+	}
+
+	.card h3 {
+		font-size: 1.8rem;
+	}
+
+	.card p {
+		font-size: 1.6rem;
+	}
+
+	/*  Contact Section */
+	.contact-title {
+		font-size: 2.6rem;
+		padding-bottom: 20px;
 	}
 }
