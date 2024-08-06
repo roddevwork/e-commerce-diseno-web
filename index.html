@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="PC Games es una tienda de videojuegos de PC"
+		/>
 		<link
 			rel="shortcut icon"
 			href="src/assets/icons/favicon.ico"
 			type="image/x-icon"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="src/css/styles.css" />
 		<title>PC Games</title>
 	</head>
@@ -194,20 +200,40 @@
 				<div class="contact-container">
 					<form class="contact-form">
 						<div class="form-group">
-							<label>Nombre</label>
-							<input type="text" name="nombre" />
+							<label for="nombre">Nombre:</label>
+							<input
+								type="text"
+								id="nombre"
+								name="nombre"
+								placeholder="Escribe tu nombre"
+							/>
 						</div>
 						<div class="form-group">
-							<label>Apellido</label>
-							<input type="text" name="apellido" />
+							<label for="apellido">Apellido:</label>
+							<input
+								type="text"
+								id="apellido"
+								name="apellido"
+								placeholder="Escribe tu apellido"
+							/>
 						</div>
 						<div class="form-group">
-							<label>Email</label>
-							<input type="email" name="email" />
+							<label for="email">Email:</label>
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Escribe tu email"
+							/>
 						</div>
 						<div class="form-group">
-							<label>Asunto</label>
-							<textarea name="asunto" rows="4"></textarea>
+							<label for="asunto">Asunto:</label>
+							<textarea
+								id="asunto"
+								name="asunto"
+								rows="4"
+								placeholder="Escribe tu asunto"
+							></textarea>
 						</div>
 						<button class="contact-btn" type="submit">Enviar</button>
 					</form>
@@ -227,6 +253,7 @@
 							allowfullscreen=""
 							loading="lazy"
 							referrerpolicy="no-referrer-when-downgrade"
+							title="Google Maps - Plaza Independencia, Mendoza"
 						></iframe>
 					</div>
 				</div>
